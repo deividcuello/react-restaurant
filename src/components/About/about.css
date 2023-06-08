@@ -1,0 +1,38 @@
+.about-container .content{
+    background: var(--lightGray);
+    padding: 3rem;
+}
+
+.about-container p{
+    line-height: 2.5rem;
+}
+
+.section-title{
+    position: relative;
+    display: inline-block;
+    border: 1rem solid var(--white);
+    border-left: none;
+}
+
+.section-title::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    bottom: 0;
+    background-color: var(--primaryColor);
+    left: 12.5%;
+    transform: translate(50%);
+}
+
+.section-title::after{
+    content: '';
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    left: 112.5%;
+    bottom: -0.28rem;
+    transform: translate(-50%);
+}

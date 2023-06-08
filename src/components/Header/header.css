@@ -1,0 +1,42 @@
+header{
+    background-color: var(--primaryColor);
+    position: fixed;
+    width: 100vw;
+    z-index: 1000;
+}
+
+header h1{
+    color: var(--white);
+}
+
+header ul{
+    gap: 5rem;
+}
+
+header i{
+    font-size: 1.5rem;
+}
+
+header i:last-child{
+    color: var(--white);
+    cursor: pointer;
+    display: none;
+}
+
+@media only screen and (max-width: 767px){
+    header ul{
+        position: absolute;
+        top: 100%;
+        flex-direction: column;
+        background-color: var(--primaryColor);
+        left: 0;
+        padding: 2rem 5rem;
+        min-height: 100vh;
+        justify-content: flex-start !important;
+        gap: 2rem;
+    }
+
+    header i:last-child{
+        display: block;
+    }
+}

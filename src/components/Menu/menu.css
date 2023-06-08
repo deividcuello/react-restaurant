@@ -1,0 +1,19 @@
+.menu-container .item-container{
+    grid-template-columns: repeat(auto-fit, minmax(272.34px, 1fr));
+}
+
+.menu-container .item{
+    background-color: var(--lightGray);
+}
+
+.menu-container .item .body,
+.menu-container .item .footer{
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 373px){
+    .menu-container .item-container{
+        grid-template-columns: 1fr;
+    }
+    
+}

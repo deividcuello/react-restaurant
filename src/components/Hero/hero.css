@@ -1,0 +1,12 @@
+#hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.908)), url('https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699_1280.jpg');
+    min-height: 100vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero-container h2{
+    font-size: clamp(2rem, 4vw, 4rem);
+}

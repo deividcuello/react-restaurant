@@ -1,0 +1,20 @@
+.contact-container{
+    background-color: var(--lightGray);
+    padding: 2rem;
+}
+
+.contact-container input, textarea{
+    width: 100%;
+    padding: 0.5rem;
+}
+
+textarea{
+    resize: none;
+    height: 10rem;
+}
+
+@media only screen and (max-width: 767px){
+    .full-name{
+        flex-direction: column;
+    }
+}
