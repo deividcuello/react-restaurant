@@ -4,7 +4,7 @@ import './header.css'
 
 function Header() {
 
-  const [active, isActive] = useState(false);
+  const [active, isActive] = useState(true);
 
   const handleResize = () => {
     window.innerWidth > 767 && !active ? isActive(!active) : "";
