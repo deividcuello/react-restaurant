@@ -9,7 +9,7 @@ function Header() {
 
   const handleResize = () => {
     window.innerWidth > 767 && !activeMenu ? isactiveMenu(!activeMenu) : "";
-    window.innerWidth < 767 && activeMenu ? isactiveMenu(!activeMenu) : "";
+    window.innerWidth <= 767 && activeMenu ? isactiveMenu(!activeMenu) : "";
   }
 
   window.addEventListener('resize', handleResize)
