@@ -23,6 +23,13 @@ header i:last-child{
     display: none;
 }
 
+header ul a.active{
+    background-color: var(--white);
+    color: var(--primaryColor);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+}
+
 @media only screen and (max-width: 767px){
     header ul{
         position: absolute;

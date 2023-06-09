@@ -4,17 +4,23 @@ import './header.css'
 
 function Header() {
 
-  const [active, isActive] = useState(true);
+  const [activeMenu, isactiveMenu] = useState(true);
+  const [ActiveLink, isActiveLink] = useState(0);
 
   const handleResize = () => {
-    window.innerWidth > 767 && !active ? isActive(!active) : "";
-    window.innerWidth < 767 && active ? isActive(!active) : "";
+    window.innerWidth > 767 && !activeMenu ? isactiveMenu(!activeMenu) : "";
+    window.innerWidth < 767 && activeMenu ? isactiveMenu(!activeMenu) : "";
   }
 
   window.addEventListener('resize', handleResize)
   
-  const handleClick = () => {
-    active ? isActive(!active) : "";
+  const handleClick = (e, number) => {
+    activeMenu && window.innerWidth < 767 ? isactiveMenu(!activeMenu) : "";
+    
+    document.querySelectorAll('header ul a').forEach((element, index) => {
+      if(element.classList.contains('activeMenu')) element.classList.remove('activeMenu')
+      if(index == number) isActiveLink(number)
+    });
   }
 
   
@@ -26,13 +32,13 @@ function Header() {
                 <i className="fa-solid fa-martini-glass-citrus white-text"></i>
                 <a href="#"><h1>Deivid's Delicious</h1></a>
             </div>
-            <ul className={`${active ? "d-flex" : "d-none"} flex-1 justify-end`}>
-                <li><a href="#" onClick={handleClick}>Home</a></li>
-                <li><a href="#about" onClick={handleClick}>About</a></li>
-                <li><a href="#menu" onClick={handleClick}>Menu</a></li>
-                <li><a href="#contact" onClick={handleClick}>Contact</a></li>
+            <ul className={`${activeMenu ? "d-flex" : "d-none"} flex-1 justify-end`}>
+                <li><a href="#" onClick={() => handleClick(event, 0)} className={`${ActiveLink == 0 ? "active" : ""}`}>Home</a></li>
+                <li><a href="#about" onClick={() => handleClick(event, 1)} className={`${ActiveLink == 1 ? "active" : ""}`}>About</a></li>
+                <li><a href="#menu" onClick={() => handleClick(event, 2)} className={`${ActiveLink == 2 ? "active" : ""}`}>Menu</a></li>
+                <li><a href="#contact" onClick={() => handleClick(event, 3)} className={`${ActiveLink == 3 ? "active" : ""}`}>Contact</a></li>
             </ul>
-            <i className="fa-solid fa-bars" onClick={() => isActive(!active)}></i>
+            <i className="fa-solid fa-bars" onClick={() => isactiveMenu(!activeMenu)}></i>
         </nav>
     </header>
   )
