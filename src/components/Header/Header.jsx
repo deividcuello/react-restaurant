@@ -8,12 +8,9 @@ function Header() {
 window.addEventListener('scroll', updateNav);
 
 function updateNav() {
-  const currentRegion = [...document.querySelectorAll("section:not([id=''])")]
-    .find(e=>e.getBoundingClientRect().top>=0)
+  const currentRegion = [...document.querySelectorAll("section:not([id=''])")].find(e=>e.getBoundingClientRect().top>=0)
     
   if(currentRegion) {
-    console.log(currentRegion.id)
-    window.location.hash = `#${currentRegion.id}`;
     
     [...document.querySelectorAll(`a:not([href='#${currentRegion.id}'])`)]
       .forEach(a=>a.classList.remove('active'))
