@@ -4,7 +4,7 @@ import './contact.css'
 function Contact() {
   return (
     <section id="contact">
-        <div className='container'>
+        <form className='container'>
             <h2 className="section-title">Contact</h2>
             <div className='contact-container d-flex flex-column gap-1'>
                 <div className="full-name d-flex gap-1">
@@ -27,7 +27,7 @@ function Contact() {
                 </div>
                 <input className='btn' type="submit" value="Send message"/>
             </div>
-        </div>
+        </form>
     </section>
   )
 }
