@@ -5,7 +5,7 @@ function Menu() {
   return (
     <section id='menu'>
         <div className="menu-container container">
-            <h3 className='section-title'>Menu</h3>
+            <h2 className='section-title'>Menu</h2>
             <div className="item-container d-grid gap-1">
                 <div className="item">
                     <div className="header">
