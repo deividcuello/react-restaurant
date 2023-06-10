@@ -20,22 +20,22 @@ function updateNav() {
 }
 
 
-  const [activeMenu, isactiveMenu] = useState(true);
-  const [ActiveLink, isActiveLink] = useState(0);
+  const [activeMenu, setActiveMenu] = useState(true);
+  const [ActiveLink, setActiveLink] = useState(0);
 
   const handleResize = () => {
-    window.innerWidth > 767 && !activeMenu ? isactiveMenu(!activeMenu) : "";
-    window.innerWidth <= 767 && activeMenu ? isactiveMenu(!activeMenu) : "";
+    window.innerWidth > 767 && !activeMenu ? setActiveMenu(!activeMenu) : "";
+    window.innerWidth <= 767 && activeMenu ? setActiveMenu(!activeMenu) : "";
   }
 
   window.addEventListener('resize', handleResize)
   
   const handleClick = (e, number) => {
-    activeMenu && window.innerWidth < 767 ? isactiveMenu(!activeMenu) : "";
+    activeMenu && window.innerWidth < 767 ? setActiveMenu(!activeMenu) : "";
     
     document.querySelectorAll('header ul a').forEach((element, index) => {
       if(element.classList.contains('activeMenu')) element.classList.remove('activeMenu')
-      if(index == number) isActiveLink(number)
+      if(index == number) setActiveLink(number)
     });
   }
 
@@ -52,7 +52,7 @@ function updateNav() {
                 <li><a href="#menu" onClick={() => handleClick(event, 2)} className={`${ActiveLink == 2 ? "active" : ""}`}>Menu</a></li>
                 <li><a href="#contact" onClick={() => handleClick(event, 3)} className={`${ActiveLink == 3 ? "active" : ""}`}>Contact</a></li>
             </ul>
-            <i className="fa-solid fa-bars" onClick={() => isactiveMenu(!activeMenu)}></i>
+            <i className="fa-solid fa-bars" onClick={() => setActiveMenu(!activeMenu)}></i>
         </nav>
     </header>
   )
